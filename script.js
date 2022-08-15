@@ -1,49 +1,42 @@
-//todo first way
+const userName = document.getElementById('1');
+const userAge = document.getElementById('2');
+const userEducation = document.getElementById('3');
 
-const obj1 = {
-	name: 'din',
-	age: 3,
-	character: {
-		kind: true,
-		honest: false,
-		evil: false,
+
+const object = {
+	name: null,
+	age: null,
+	education: null
+};
+console.log(object);
+
+userName.onclick = function () {
+	if ('name' in object === false) {
+		object.name = 'crumb';
+		console.log(object);
+	} else {
+		delete object.name;
+		console.log(object);
 	}
 };
 
-const obj2 = JSON.parse(JSON.stringify(obj1)); //deep clone
 
-obj2.character.kind = false;
-console.log(obj2);
+userAge.onclick = function () {
+	if ('age' in object === false) {
+		object.age = 17;
+		console.log(object);
+	} else {
+		delete object.age;
+		console.log(object);
+	}
+};
 
-console.log(obj1.character);
-
-//todo first way
-
-//todo second way, if no nesting
-
-// const obj1 = {
-// 	name: 'din',
-// 	age: 3,
-// };
-
-// const obj2 = Object.assign({}, obj1);
-
-// console.log(obj1);
-// console.log(obj2);
-
-//todo second way, if no nesting
-
-//todo third way
-
-// const obj1 = {
-// 	name: 'din',
-// 	age: 3,
-// };
-
-// const obj2 = { ...obj1 };
-
-// console.log(obj1);
-// console.log(obj2);
-
-//todo third way
-
+userEducation.onclick = function () {
+	if ('education' in object === false) {
+		object.education = true;
+		console.log(object);
+	} else {
+		delete object.education;
+		console.log(object);
+	}
+};
