@@ -1,42 +1,57 @@
-const userName = document.getElementById('1');
-const userAge = document.getElementById('2');
-const userEducation = document.getElementById('3');
+let userName = document.getElementById('1');
+let userAge = document.getElementById('2');
+let userEducation = document.getElementById('3');
 
+const obj = {};
 
-const object = {
-	name: null,
-	age: null,
-	education: null
-};
-console.log(object);
-
-userName.onclick = function () {
-	if ('name' in object === false) {
-		object.name = 'crumb';
-		console.log(object);
+const addProp = (key, val) => {
+	if (obj[key]) {
+		delete obj[key]
 	} else {
-		delete object.name;
-		console.log(object);
-	}
+		obj[key] = val
+	};
+	console.log(obj);
 };
 
-
-userAge.onclick = function () {
-	if ('age' in object === false) {
-		object.age = 17;
-		console.log(object);
-	} else {
-		delete object.age;
-		console.log(object);
-	}
+userName.onclick = () => {
+	addProp('name', 'crumb');
+};
+userAge.onclick = () => {
+	addProp('age', 17);
+};
+userEducation.onclick = () => {
+	addProp('education', true);
 };
 
-userEducation.onclick = function () {
-	if ('education' in object === false) {
-		object.education = true;
-		console.log(object);
-	} else {
-		delete object.education;
-		console.log(object);
-	}
-};
+// const object = {};
+// console.log(object);
+
+// function addProps(key) {
+// 	if (key in object === false) {
+// 		object.key;
+// 		console.log(object);
+// 	} else {
+// 		delete object.key;
+// 		console.log(object);
+// 	};
+// };
+
+// userAge.onclick = function () {
+// 	if ('age' in object === false) {
+// 		object.age = 17;
+// 		console.log(object);
+// 	} else {
+// 		delete object.age;
+// 		console.log(object);
+// 	}
+// };
+
+// userEducation.onclick = function () {
+// 	if ('education' in object === false) {
+// 		object.education = true;
+// 		console.log(object);
+// 	} else {
+// 		delete object.education;
+// 		console.log(object);
+// 	}
+// };
